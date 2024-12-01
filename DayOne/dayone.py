@@ -4,21 +4,24 @@ def compare_lists(leftlist, rightlist):
     
     totaldistance = 0
 
-    while len(leftlist) > 0:
+    leftlistcopy = leftlist.copy()
+    rightlistcopy = rightlist.copy()
+
+    while len(leftlistcopy) > 0:
         leftlow = 100000
         rightlow = 100000
 
-        for i in leftlist:
+        for i in leftlistcopy:
             if i < leftlow:
                 leftlow = i
         
-        leftlist.remove(leftlow)
+        leftlistcopy.remove(leftlow)
 
-        for i in rightlist:
+        for i in rightlistcopy:
             if i < rightlow:
                 rightlow = i
         
-        rightlist.remove(rightlow)
+        rightlistcopy.remove(rightlow)
 
         distance = abs(leftlow - rightlow)
 
@@ -27,7 +30,7 @@ def compare_lists(leftlist, rightlist):
     print(f"Total distance is: {totaldistance}")
 
 
-# compare_lists(lists.leftlist, lists.rightlist)
+compare_lists(lists.leftlist, lists.rightlist)
 
 #First Answer: 1189304
 
@@ -46,3 +49,5 @@ def calculate_similarity_score(leftlist, rightlist):
     print(f"Total similarity score: {score}")
 
 calculate_similarity_score(lists.leftlist, lists.rightlist)
+
+#Second answer: 24349736
