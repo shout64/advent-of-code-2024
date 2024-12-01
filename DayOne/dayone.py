@@ -27,4 +27,22 @@ def compare_lists(leftlist, rightlist):
     print(f"Total distance is: {totaldistance}")
 
 
-compare_lists(lists.leftlist, lists.rightlist)
+# compare_lists(lists.leftlist, lists.rightlist)
+
+#First Answer: 1189304
+
+
+def calculate_similarity_score(leftlist, rightlist):
+    
+    score = 0
+
+    for i in leftlist:
+        duplicates = 0
+        for j in rightlist:
+            if i == j:
+                duplicates += 1
+        score += (i * duplicates)
+
+    print(f"Total similarity score: {score}")
+
+calculate_similarity_score(lists.leftlist, lists.rightlist)
