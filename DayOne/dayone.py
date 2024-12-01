@@ -32,9 +32,6 @@ def compare_lists(leftlist, rightlist):
 
 compare_lists(lists.leftlist, lists.rightlist)
 
-#First Answer: 1189304
-
-
 def calculate_similarity_score(leftlist, rightlist):
     
     score = 0
@@ -49,5 +46,3 @@ def calculate_similarity_score(leftlist, rightlist):
     print(f"Total similarity score: {score}")
 
 calculate_similarity_score(lists.leftlist, lists.rightlist)
-
-#Second answer: 24349736
