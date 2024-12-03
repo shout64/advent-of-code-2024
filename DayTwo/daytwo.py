@@ -10,13 +10,13 @@ report_list = [l.split(" ") for l in data.split("\n") if l]
 num_of_safe_reports = 0
 # parse 5 characters as one report
 
+
 for i in report_list:
     last_number = 0
     report_safe = True
     increasing = False
     decreasing = False
-    for x in range(len(i)):
-        index = x
+    index = 0
 
     for j in i:
         if (index != 0):
@@ -35,15 +35,10 @@ for i in report_list:
             report_safe = False
 
         last_number = int(j)
+        index += 1
 
-    print(f"Row {i} is Report Safe = {report_safe}\n")
+    print(f"Row {index} is Report Safe = {report_safe}\n")
     if report_safe == True:
         num_of_safe_reports += 1
-
-
-
-# Answer too low
-# Double check index checks
-
 
 print(f"Number of safe reports: {num_of_safe_reports}")
