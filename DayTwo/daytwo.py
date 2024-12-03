@@ -18,28 +18,35 @@ for i in report_list:
     report_safe = True
     increasing = False
     decreasing = False
+    for x in range(len(i)):
+        index = x
 
     for j in i:
-        if (j != i[0]):
+        if (index != 0):
             if int(j) < last_number:
-                increasing = True
-            elif int(j) > last_number:
                 decreasing = True
+                # print("Decreasing: ", decreasing)
+            elif int(j) > last_number:
+                increasing = True
+                # print("Increasing: ", decreasing)
 
-        if increasing and decreasing:
+        if increasing == True and decreasing == True:
             report_safe = False
 
         difference = abs(int(j) - last_number)
-        if (j != i[0]) and (difference not in [1, 2, 3]):
+        if (index != 0) and (difference not in [1, 2, 3]):
             report_safe = False
 
         last_number = int(j)
 
-    # print(f"Row {i} is Report Safe = {report_safe}")
+    print(f"Row {i} is Report Safe = {report_safe}\n")
     if report_safe == True:
         num_of_safe_reports += 1
 
-        
+
+
+# Answer too low
+# Double check index checks
 
 
 print(f"Number of safe reports: {num_of_safe_reports}")
