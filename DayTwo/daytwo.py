@@ -3,15 +3,12 @@
 # Is difference between 1-3
 
 file = open(r"C:\Users\Devin\Development\github\advent-of-code-2024\DayTwo\lists.txt")
-
 data = file.read()
 report_list = [l.split(" ") for l in data.split("\n") if l]
 
-
-# parse 5 characters as one report
+num_of_safe_reports = 0
 
 def analyze_reports(reports):
-    num_of_safe_reports = 0
     last_number = 0
     report_safe = True
     increasing = False
@@ -29,21 +26,34 @@ def analyze_reports(reports):
 
         if increasing == True and decreasing == True:
             report_safe = False
+            break
 
         difference = abs(int(j) - last_number)
         if (index != 0) and (difference not in [1, 2, 3]):
             report_safe = False
+            break
 
         last_number = int(j)
         index += 1
 
     if report_safe == True:
-        num_of_safe_reports += 1
+        return "Safe"
+    else:
+        return index
 
-    return num_of_safe_reports
 
 for i in range(len(report_list)):
-    safies = analyze_reports(report_list[i])
+    result = analyze_reports(report_list[i])
 
-    print(safies)
+    if result != "Safe":
+        report_list[i].pop(result)
+        second_attempt = analyze_reports(report_list[i])
+        if second_attempt != "Safe":
+            pass
+        else:
+            num_of_safe_reports += 1
+    else:
+        num_of_safe_reports += 1
 
+print(f"Number of safe reports: {num_of_safe_reports}")
+# 647 too low. Original answer was 624
