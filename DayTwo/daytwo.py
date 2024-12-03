@@ -1,7 +1,4 @@
-import lists
-import pandas as pd
-
-# Safe reports
+# Find Safe reports
 # Are all numbers increasing or decreasing
 # Is difference between 1-3
 
