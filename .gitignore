@@ -164,3 +164,4 @@ cython_debug/
 # Input data
 lists.py
 lists.txt
+input.txt
