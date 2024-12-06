@@ -36,12 +36,15 @@ def find_muls(data):
                     print(f"Running result: {result}\n")
                     start_index = start + 4
                     numbers = []
+                    string_num = ""
                     break
-            else:
-                print(f"NOT MUL VALUE {char}")
+            elif len(string_num) > 0 or len(numbers) > 0:
+                print(f"NOT MUL VALUE: {char}\n")
                 string_num = ""
-                start_index = start + 4
                 numbers = []
+                start_index = start + 4
+                break
         
     
 find_muls(data)
+# First answer: 192767529
